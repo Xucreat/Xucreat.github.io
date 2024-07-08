@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Golang Gin 一个非常优秀的Web框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About Gin">
+<meta property="og:url" content="http://example.com/2024/07/09/About-Gin/index.html">
+<meta property="og:site_name" content="BoBoo">
+<meta property="og:description" content="Golang Gin 一个非常优秀的Web框架">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-08T16:06:31.000Z">
+<meta property="article:modified_time" content="2024-07-08T16:08:46.894Z">
+<meta property="article:author" content="MandyX">
+<meta property="article:tag" content="gin">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2024/07/09/About-Gin/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/07/09/About-Gin/","path":"2024/07/09/About-Gin/","title":"About Gin"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>About Gin | BoBoo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+      <img class="custom-logo-image" src="/uploads/custom-logo.png" alt="BoBoo">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">BoBoo</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">BoBoo's</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful-API-%E7%9A%84%E8%A7%84%E8%8C%83"><span class="nav-number">1.</span> <span class="nav-text">RESTful API 的规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gin%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">Gin中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">定义中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B8%B8%E7%94%A8%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">中间件常用表示方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E6%8E%A5%E5%8F%A3%E8%80%97%E6%97%B6%E7%9A%84%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.1.2.</span> <span class="nav-text">记录接口耗时的中间件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">注册中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E5%85%A8%E5%B1%80%E8%B7%AF%E7%94%B1%E6%B3%A8%E5%86%8C"><span class="nav-number">2.2.1.</span> <span class="nav-text">为全局路由注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E6%9F%90%E4%B8%AA%E8%B7%AF%E7%94%B1%E5%8D%95%E7%8B%AC%E6%B3%A8%E5%86%8C"><span class="nav-number">2.2.2.</span> <span class="nav-text">为某个路由单独注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E8%B7%AF%E7%94%B1%E7%BB%84%E6%B3%A8%E5%86%8C%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.2.3.</span> <span class="nav-text">为路由组注册中间件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E5%93%8D%E5%BA%94%E4%BD%93%E7%9A%84%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.2.4.</span> <span class="nav-text">记录响应体的中间件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F%E4%B8%AD%E9%97%B4%E4%BB%B6cors"><span class="nav-number">2.2.5.</span> <span class="nav-text">跨域中间件cors</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.3.</span> <span class="nav-text">中间件注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gin%E9%BB%98%E8%AE%A4%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.3.1.</span> <span class="nav-text">gin默认中间件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gin%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%AD%E4%BD%BF%E7%94%A8goroutine"><span class="nav-number">2.3.2.</span> <span class="nav-text">gin中间件中使用goroutine</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">MandyX</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Xucreat" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Xucreat" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/09/About-Gin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="MandyX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BoBoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="About Gin | BoBoo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          About Gin
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-07-09 00:06:31 / 修改时间：00:08:46" itemprop="dateCreated datePublished" datetime="2024-07-09T00:06:31+08:00">2024-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Golang/gin/" itemprop="url" rel="index"><span itemprop="name">gin</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Golang Gin 一个非常优秀的Web框架</p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;github.com/gin-gonic/gin&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	r := gin.Default() // 实例化一个默认的gin示例</span><br><span class="line">	r.GET(&quot;/&quot;, func(c *gin.Context) &#123;</span><br><span class="line">		c.JSON(200, gin.H&#123;</span><br><span class="line">			&quot;Blog&quot;:&quot;www.flysnow.org&quot;,</span><br><span class="line">			&quot;wechat&quot;:&quot;flysnow_org&quot;,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line">	r.Run(&quot;:8080&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>r := gin.Default()</code> : 实例化一个默认的gin示例</p>
+</li>
+<li><p><code>c.JSON</code>方法: 返回一个JSON格式的字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func (c *Context) JSON(code int, obj interface&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>code</code>便是返回的<code>HTTP Status Code</code>,<br><code>obj</code>是内容，<code>gin.H</code>是一个<code>map[string]interface&#123;&#125;</code>,<font color='green'>(集合，键值对，键：string， 值：interface{})</font>声明为<code>H</code>类型，便于操作。</p>
+</li>
+</ul>
+<h2 id="RESTful-API-的规范"><a href="#RESTful-API-的规范" class="headerlink" title="RESTful API 的规范"></a>RESTful API 的规范</h2><p>RESTful API 的规范建议我们使用特定的HTTP方法来对服务器上的资源进行操作。</p>
+<p>在 RESTful API 中，使用的主要是以下五种HTTP方法：</p>
+<ol>
+<li>GET，表示读取服务器上的资源<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP GET https://www.flysnow.org/users // 获取所有用户的信息</span><br></pre></td></tr></table></figure></li>
+<li>POST，表示在服务器上创建资源<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTTP POST https://www.flysnow.org/users </span><br><span class="line">// 创建一个用户，会通过`POST`给服务器提供创建这个用户所需的全部信息</span><br></pre></td></tr></table></figure></li>
+<li>PUT,表示更新或者替换服务器上的资源<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP PUT https://www.flysnow.org/users/123 </span><br><span class="line">// 更新/替换`id`为`123`的这个用户</span><br><span class="line">// 更新的时候，会通过`PUT`提供更新这个用户需要的全部用户信息。这里`PUT`和`POST`不一样的是，从URL上看，`PUT`操作的是单个资源，</span><br></pre></td></tr></table></figure></li>
+<li>DELETE，表示删除服务器上的资源<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTTP DELETE https://www.flysnow.org/users/123</span><br><span class="line">// 操作单个资源</span><br></pre></td></tr></table></figure></li>
+<li>PATCH，表示更新&#x2F;修改资源的一部分<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP PATCH https://www.flysnow.org/users/123</span><br><span class="line">// 只能更新这个资源的部分信息，而不是全部(这种也叫替换)，是部分更新</span><br><span class="line">// 需要更新什么就提供用户信息给服务器</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Gin中间件"><a href="#Gin中间件" class="headerlink" title="Gin中间件"></a>Gin中间件</h2><p>Gin框架允许开发者在处理请求的过程中，加入用户自己的钩子（Hook）函数。这个钩子函数就叫中间件，中间件适合处理一些<strong>公共的业务逻辑</strong>，比如登录认证、权限校验、数据分页、记录日志、耗时统计等。</p>
+<h3 id="定义中间件"><a href="#定义中间件" class="headerlink" title="定义中间件"></a>定义中间件</h3><p>Gin中的中间件必须是一个<code>gin.HandlerFunc</code>类型。</p>
+<h4 id="中间件常用表示方法"><a href="#中间件常用表示方法" class="headerlink" title="中间件常用表示方法"></a>中间件常用表示方法</h4><p>将其包装成一个闭包-&gt;实现一些灵活的配置</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">authMiddleware</span><span class="params">(doCheck <span class="type">bool</span>)</span></span>gin.HandleFunc&#123; <span class="comment">// doCheck相当于是一个开关</span></span><br><span class="line">	<span class="comment">// 连接数据库</span></span><br><span class="line">	<span class="comment">// 或者一些其他的准备工作</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> doCheck&#123;</span><br><span class="line">			<span class="comment">// 存放具体的逻辑</span></span><br><span class="line">			<span class="comment">// 是否登陆的判断</span></span><br><span class="line">			<span class="comment">// if 是登陆用户</span></span><br><span class="line">			<span class="comment">// c.Next()</span></span><br><span class="line">			<span class="comment">// else</span></span><br><span class="line">			<span class="comment">// c.Abort()</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			c.Next()</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	r := gin.Default()</span><br><span class="line"></span><br><span class="line">	r.Use(m1, m2, authMiddleware(<span class="literal">false</span>)) </span><br><span class="line">	<span class="comment">// 全局中注册中间件函数m1, m2, authMiddleware</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// GET(relativePath string, handlers ...HandlerFunc) IRoutes</span></span><br><span class="line">	r.GET(<span class="string">&quot;/index&quot;</span>, indexHandler)</span><br><span class="line">	r.GET(<span class="string">&quot;/shop&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;...&#125;)</span><br><span class="line">	r.GET(<span class="string">&quot;/user&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;...&#125;)</span><br><span class="line"></span><br><span class="line">	r.run() <span class="comment">// :8080</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="记录接口耗时的中间件"><a href="#记录接口耗时的中间件" class="headerlink" title="记录接口耗时的中间件"></a>记录接口耗时的中间件</h4><p>例如我们像下面的代码一样定义一个统计请求耗时的中间件。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// StatCost 是一个统计请求处理函数的耗时中间件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">StatCost</span><span class="params">()</span></span> gin.HandlerFunc &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123; </span><br><span class="line">	<span class="comment">// 包含gin.Context参数的函数都可以称之为handlerfun类型</span></span><br><span class="line">	<span class="comment">// type HandlerFunc func(*Context)</span></span><br><span class="line">		start := time.Now()</span><br><span class="line">		c.Set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;小王子&quot;</span>) <span class="comment">// 可以通过c.Set在请求上下文中设置值，后续的处理函数能够取到该值(跨中间件存取值)</span></span><br><span class="line">		<span class="comment">// 调用该请求的剩余处理程序</span></span><br><span class="line">		c.Next()</span><br><span class="line">		<span class="comment">// 组织调用后续的处理函数</span></span><br><span class="line">		<span class="comment">// c.Abort()</span></span><br><span class="line">		<span class="comment">// 计算耗时</span></span><br><span class="line">		cost := time.Since(start)</span><br><span class="line">		log.Println(cost)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>p.s.<code>c.Set(&quot;name&quot;, &quot;小王子&quot;)</code>  可以通过c.Set在<strong>请求上下文中设置值</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span></span> Set(key <span class="type">string</span>, value any) &#123;</span><br><span class="line">    c.mu.Lock()</span><br><span class="line">    <span class="keyword">defer</span> c.mu.Unlock()</span><br><span class="line">    <span class="keyword">if</span> c.Keys == <span class="literal">nil</span> &#123;</span><br><span class="line">        c.Keys = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]any)</span><br><span class="line">    &#125;</span><br><span class="line">    c.Keys[key] = value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>后续的<code>name, ok := c.Get(&quot;name&quot;)</code>处理函数能够取到该值(<strong>跨中间件存取值</strong>)<br>p.s .</p>
+<ul>
+<li><code>func (c *Context) Get(key string) (value any, exists bool)</code></li>
+<li><pre><code>
+</code></pre>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// MustGet returns the value for the given key if it exists, otherwise it panics.</span><br><span class="line">func (c *Context) MustGet(key string) any```</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>func (c *Context) GetString(key string) (s string) </code></li>
+</ul>
+<p>![[Pasted image 20240329180044.png]]<br>![[Capture_20240329_180411.jpg]]<br>![[Pasted image 20240329180051.png]]<br>gin的中间件的最常用的<strong>三种用法</strong>：</p>
+<ul>
+<li>c.Next()</li>
+<li>c.Abort()</li>
+<li>return</li>
+</ul>
+<h3 id="注册中间件"><a href="#注册中间件" class="headerlink" title="注册中间件"></a>注册中间件</h3><p>在gin框架中，我们可以为每个路由添加任意数量的中间件</p>
+<h4 id="为全局路由注册"><a href="#为全局路由注册" class="headerlink" title="为全局路由注册"></a>为全局路由注册</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// 新建一个没有任何默认中间件的路由</span></span><br><span class="line">	r := gin.New()</span><br><span class="line">	<span class="comment">// 注册一个全局中间件</span></span><br><span class="line">	r.Use(StatCost()) </span><br><span class="line">	<span class="comment">// 在执行func(c *gin.Context)之前 执行StatCost()中间件</span></span><br><span class="line">	</span><br><span class="line">	r.GET(<span class="string">&quot;/test&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">		name := c.MustGet(<span class="string">&quot;name&quot;</span>).(<span class="type">string</span>) <span class="comment">// 从上下文取值</span></span><br><span class="line">		log.Println(name)</span><br><span class="line">		c.JSON(http.StatusOK, gin.H&#123;</span><br><span class="line">			<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Hello world!&quot;</span>,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line">	r.Run()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="为某个路由单独注册"><a href="#为某个路由单独注册" class="headerlink" title="为某个路由单独注册"></a>为某个路由单独注册</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给/test2路由单独注册中间件（可注册多个）</span></span><br><span class="line">	r.GET(<span class="string">&quot;/test2&quot;</span>, StatCost(), <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">		name := c.MustGet(<span class="string">&quot;name&quot;</span>).(<span class="type">string</span>) <span class="comment">// 从上下文取值</span></span><br><span class="line">		log.Println(name)</span><br><span class="line">		c.JSON(http.StatusOK, gin.H&#123;</span><br><span class="line">			<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Hello world!&quot;</span>,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="为路由组注册中间件"><a href="#为路由组注册中间件" class="headerlink" title="为路由组注册中间件"></a>为路由组注册中间件</h4><p>为路由组注册中间件有以下两种写法。</p>
+<p>写法1：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">shopGroup := r.Group(<span class="string">&quot;/shop&quot;</span>, StatCost())</span><br><span class="line">&#123;</span><br><span class="line">    shopGroup.GET(<span class="string">&quot;/index&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;...&#125;)</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>写法2：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">shopGroup := r.Group(<span class="string">&quot;/shop&quot;</span>)</span><br><span class="line">shopGroup.Use(StatCost())</span><br><span class="line">&#123;</span><br><span class="line">    shopGroup.GET(<span class="string">&quot;/index&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;...&#125;)</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="记录响应体的中间件"><a href="#记录响应体的中间件" class="headerlink" title="记录响应体的中间件"></a>记录响应体的中间件</h4><p>我们有时候可能会想要记录下某些情况下返回给客户端的响应数据，这个时候就可以编写一个中间件来搞定。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">type</span> bodyLogWriter <span class="keyword">struct</span> &#123;</span><br><span class="line">	gin.ResponseWriter               <span class="comment">// 嵌入gin框架ResponseWriter</span></span><br><span class="line">	body               *bytes.Buffer <span class="comment">// 我们记录用的response</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Write 写入响应体数据</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(w bodyLogWriter)</span></span> Write(b []<span class="type">byte</span>) (<span class="type">int</span>, <span class="type">error</span>) &#123;</span><br><span class="line">	w.body.Write(b)                  <span class="comment">// 我们记录一份</span></span><br><span class="line">	<span class="keyword">return</span> w.ResponseWriter.Write(b) <span class="comment">// 真正写入响应</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ginBodyLogMiddleware 一个记录返回给客户端响应体的中间件</span></span><br><span class="line"><span class="comment">// https://stackoverflow.com/questions/38501325/how-to-log-response-body-in-gin</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ginBodyLogMiddleware</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	blw := &amp;bodyLogWriter&#123;body: bytes.NewBuffer([]<span class="type">byte</span>&#123;&#125;), ResponseWriter: c.Writer&#125;</span><br><span class="line">	c.Writer = blw <span class="comment">// 使用我们自定义的类型替换默认的</span></span><br><span class="line"></span><br><span class="line">	c.Next() <span class="comment">// 执行业务逻辑</span></span><br><span class="line"></span><br><span class="line">	fmt.Println(<span class="string">&quot;Response body: &quot;</span> + blw.body.String()) <span class="comment">// 事后按需记录返回的响应</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="跨域中间件cors"><a href="#跨域中间件cors" class="headerlink" title="跨域中间件cors"></a>跨域中间件cors</h4><p>推荐使用社区的<a target="_blank" rel="noopener" href="https://github.com/gin-contrib/cors">https://github.com/gin-contrib/cors</a> 库，一行代码解决前后端分离架构下的跨域问题。</p>
+<p><strong>注意：</strong> 该中间件需要注册在业务处理函数前面。</p>
+<p>这个库支持各种常用的配置项，具体使用方法如下。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">  <span class="string">&quot;time&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="string">&quot;github.com/gin-contrib/cors&quot;</span></span><br><span class="line">  <span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  router := gin.Default()</span><br><span class="line">  <span class="comment">// CORS for https://foo.com and https://github.com origins, allowing:</span></span><br><span class="line">  <span class="comment">// - PUT and PATCH methods</span></span><br><span class="line">  <span class="comment">// - Origin header</span></span><br><span class="line">  <span class="comment">// - Credentials share</span></span><br><span class="line">  <span class="comment">// - Preflight requests cached for 12 hours</span></span><br><span class="line">  router.Use(cors.New(cors.Config&#123;</span><br><span class="line">    AllowOrigins:     []<span class="type">string</span>&#123;<span class="string">&quot;https://foo.com&quot;</span>&#125;,  <span class="comment">// 允许跨域发来请求的网站</span></span><br><span class="line">    AllowMethods:     []<span class="type">string</span>&#123;<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;POST&quot;</span>, <span class="string">&quot;PUT&quot;</span>, <span class="string">&quot;DELETE&quot;</span>,  <span class="string">&quot;OPTIONS&quot;</span>&#125;,  <span class="comment">// 允许的请求方法</span></span><br><span class="line">    AllowHeaders:     []<span class="type">string</span>&#123;<span class="string">&quot;Origin&quot;</span>, <span class="string">&quot;Authorization&quot;</span>, <span class="string">&quot;Content-Type&quot;</span>&#125;,</span><br><span class="line">    ExposeHeaders:    []<span class="type">string</span>&#123;<span class="string">&quot;Content-Length&quot;</span>&#125;,</span><br><span class="line">    AllowCredentials: <span class="literal">true</span>,</span><br><span class="line">    AllowOriginFunc: <span class="function"><span class="keyword">func</span><span class="params">(origin <span class="type">string</span>)</span></span> <span class="type">bool</span> &#123;  <span class="comment">// 自定义过滤源站的方法</span></span><br><span class="line">      <span class="keyword">return</span> origin == <span class="string">&quot;https://github.com&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    MaxAge: <span class="number">12</span> * time.Hour,</span><br><span class="line">  &#125;))</span><br><span class="line">  router.Run()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然你可以简单的像下面的示例代码那样使用默认配置，允许所有的跨域请求。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  router := gin.Default()</span><br><span class="line">  <span class="comment">// same as</span></span><br><span class="line">  <span class="comment">// config := cors.DefaultConfig()</span></span><br><span class="line">  <span class="comment">// config.AllowAllOrigins = true</span></span><br><span class="line">  <span class="comment">// router.Use(cors.New(config))</span></span><br><span class="line">  router.Use(cors.Default())</span><br><span class="line">  router.Run()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="中间件注意事项"><a href="#中间件注意事项" class="headerlink" title="中间件注意事项"></a>中间件注意事项</h3><h4 id="gin默认中间件"><a href="#gin默认中间件" class="headerlink" title="gin默认中间件"></a>gin默认中间件</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Default</span><span class="params">()</span></span> *Engine &#123;</span><br><span class="line">    debugPrintWARNINGDefault()</span><br><span class="line">    engine := New()</span><br><span class="line">    engine.Use(Logger(), Recovery())</span><br><span class="line">    <span class="keyword">return</span> engine</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>gin.Default()</code>默认使用了<code>Logger</code>和<code>Recovery</code>中间件，其中：</p>
+<ul>
+<li><code>Logger</code>中间件将日志写入<code>gin.DefaultWriter</code>，即使配置了<code>GIN_MODE=release</code>。</li>
+<li><code>Recovery</code>中间件会recover任何<code>panic</code>。如果有panic的话，会写入500响应码。</li>
+</ul>
+<p>如果不想使用上面两个默认的中间件，可以使用<code>gin.New()</code>新建一个没有任何默认中间件的路由。</p>
+<h4 id="gin中间件中使用goroutine"><a href="#gin中间件中使用goroutine" class="headerlink" title="gin中间件中使用goroutine"></a>gin中间件中使用goroutine</h4><p>当在中间件或<code>handler</code>中启动新的<code>goroutine</code>时，<strong>不能使用</strong>原始的上下文（c *gin.Context），必须使用其<strong>只读副本（<code>c.Copy()</code>）</strong>。<br>e.g.<code>go funcxx(c.Copy())</code><br>因为：若在单独的goroutine中修改了c的值，后续的例如c.Next()内获取的值是不可控的。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/gin/" rel="tag"># gin</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/08/Go%E6%8E%A5%E5%8F%A3%E5%9E%8B%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" rel="prev" title="Go接口型函数的使用场景">
+                  <i class="fa fa-angle-left"></i> Go接口型函数的使用场景
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">MandyX</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
