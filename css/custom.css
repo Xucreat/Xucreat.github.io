@@ -1,3 +1,4 @@
 body {
   background-image: url("/images/99.jpg");
+  background-size: contain;
 }
