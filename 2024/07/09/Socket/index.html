@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://xucreat.github.io/images/Pasted%20image%2020231107150503.png">
 <meta property="og:image" content="https://xucreat.github.io/images/Pasted%20image%2020231108214814.png">
 <meta property="article:published_time" content="2024-07-08T16:24:48.000Z">
-<meta property="article:modified_time" content="2024-07-09T06:43:23.588Z">
+<meta property="article:modified_time" content="2024-07-09T10:18:06.476Z">
 <meta property="article:author" content="MandyX">
 <meta property="article:tag" content="socket">
 <meta property="article:tag" content="TCP">
@@ -124,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">socket 是应用层与TCP&#x2F;IP协议族通信的中间软件抽象层，它是一组接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Socket编程的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%BD%91%E7%BB%9C%E4%B8%AD%E8%BF%9B%E7%A8%8B%E9%97%B4%E5%A6%82%E4%BD%95%E9%80%9A%E4%BF%A1"><span class="nav-number">2.1.</span> <span class="nav-text">1、网络中进程间如何通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A6%82%E4%BD%95%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">1)如何唯一标识一个进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFSocket%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">2、什么是Socket？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81socket%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">2.3.</span> <span class="nav-text">3、socket的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-socket-%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.1.</span> <span class="nav-text">3.1 .socket()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-bind-%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.2.</span> <span class="nav-text">3.2.bind()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-bind-%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">3.2.1 bind()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-%E7%BD%91%E7%BB%9C%E5%AD%97%E8%8A%82%E5%BA%8F%E5%92%8C%E4%B8%BB%E6%9C%BA%E5%AD%97%E8%8A%82%E5%BA%8F"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">3.2.2.网络字节序和主机字节序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%EF%BC%89%E4%B8%BB%E6%9C%BA%E5%AD%97%E8%8A%82%E5%BA%8F-%E5%B8%B8%E8%AF%B4%E7%9A%84%E5%A4%A7%E7%AB%AF%E5%92%8C%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F-%EF%BC%9A"><span class="nav-number">2.3.2.2.1.</span> <span class="nav-text">1）主机字节序(常说的大端和小端模式)：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%EF%BC%89%E5%A4%A7%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F%E5%92%8C%E5%B0%8F%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F"><span class="nav-number">2.3.2.2.2.</span> <span class="nav-text">2）大端字节序和小端字节序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3%EF%BC%89%E7%BD%91%E7%BB%9C%E5%AD%97%E8%8A%82%E5%BA%8F%EF%BC%9A"><span class="nav-number">2.3.2.2.3.</span> <span class="nav-text">3）网络字节序：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-accept-%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.3.accept()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-accept"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">3.3.1.accept()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-%E5%8C%BA%E5%88%86%E4%B8%A4%E7%A7%8D%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">2.3.3.1.1.</span> <span class="nav-text">3.4.区分两种套接字</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E7%9B%91%E5%90%AC%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">2.3.3.1.1.1.</span> <span class="nav-text">1)监听套接字</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2%EF%BC%89%E8%BF%9E%E6%8E%A5%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">2.3.3.1.1.2.</span> <span class="nav-text">2）连接套接字</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-read-%E3%80%81write-%E7%AD%89%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.4.</span> <span class="nav-text">3.5.read()、write()等函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-1-read-%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">3.5.1.read()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-close-%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.5.</span> <span class="nav-text">3.6.close()函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Socket%E4%B8%ADTCP%E7%9A%84%E5%BB%BA%E7%AB%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">4.Socket中TCP的建立（三次握手）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-TCP"><span class="nav-number">2.4.1.</span> <span class="nav-text">4.1.TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">2.4.2.</span> <span class="nav-text">4.2.三次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">4.2.1.三次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88SYN%EF%BC%89"><span class="nav-number">2.4.2.1.1.</span> <span class="nav-text">1) 第一次握手（SYN）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88SYN-ACK%EF%BC%89"><span class="nav-number">2.4.2.1.2.</span> <span class="nav-text">2)第二次握手（SYN-ACK）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88ACK%EF%BC%89"><span class="nav-number">2.4.2.1.3.</span> <span class="nav-text">3)第三次握手（ACK）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-SYN%E6%A0%87%E5%BF%97%E4%BD%8D"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">4.2.2.SYN标志位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-3-%E4%B8%8D%E5%8F%AF%E6%98%AF%E4%B8%A4%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">2.4.2.3.</span> <span class="nav-text">4.2.3.不可是两次握手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84%E7%BB%88%E6%AD%A2-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B-font-size-2-%E5%9B%9B%E6%AC%A1%E6%8F%A1%E6%89%8B%E9%87%8A%E6%94%BE-font"><span class="nav-number">2.4.3.</span> <span class="nav-text">5.TCP连接的终止(四次挥手四次握手释放)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-TCP%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">2.4.3.1.</span> <span class="nav-text">5.1.TCP四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%EF%BC%89%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%88-FIN-Seq-x%EF%BC%89"><span class="nav-number">2.4.3.1.1.</span> <span class="nav-text">1）第一次挥手（[FIN], Seq &#x3D; x）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%EF%BC%89%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8C%A5%E6%89%8B-ACK-ACK-x-1"><span class="nav-number">2.4.3.1.2.</span> <span class="nav-text">2）第二次挥手 ([ACK], ACK &#x3D; x + 1)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3%EF%BC%89%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B-FIN-Seq-y"><span class="nav-number">2.4.3.1.3.</span> <span class="nav-text">3）第三次挥手 ([FIN], Seq &#x3D; y)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4%EF%BC%89%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B-ACK-ACK-y-1"><span class="nav-number">2.4.3.1.4.</span> <span class="nav-text">4）第四次挥手 ([ACK], ACK &#x3D; y + 1)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2%E4%B8%8D%E8%83%BD%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">2.4.3.2.</span> <span class="nav-text">5.2不能三次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-%E9%87%8D%E8%A6%81%E5%AD%97%E6%AE%B5"><span class="nav-number">2.4.3.3.</span> <span class="nav-text">5.3.重要字段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.5.</span> <span class="nav-text">6、实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS%EF%BC%9A"><span class="nav-number">2.6.</span> <span class="nav-text">PS：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81IPv4%E5%9C%B0%E5%9D%80"><span class="nav-number">2.6.1.</span> <span class="nav-text">1、IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81IPv6%E5%9C%B0%E5%9D%80"><span class="nav-number">2.6.2.</span> <span class="nav-text">2、IPv6地址</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">socket 是应用层与TCP&#x2F;IP协议族通信的中间软件抽象层，它是一组接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Socket编程的工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">网络中进程间如何通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">如何唯一标识一个进程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">什么是Socket？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">socket的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#socket-%E5%87%BD%E6%95%B0"><span class="nav-number">5.1.</span> <span class="nav-text">socket()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bind-%E5%87%BD%E6%95%B0"><span class="nav-number">5.2.</span> <span class="nav-text">bind()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bind-%E5%87%BD%E6%95%B0-2"><span class="nav-number">5.2.1.</span> <span class="nav-text">bind()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%AD%97%E8%8A%82%E5%BA%8F%E5%92%8C%E4%B8%BB%E6%9C%BA%E5%AD%97%E8%8A%82%E5%BA%8F"><span class="nav-number">5.2.2.</span> <span class="nav-text">网络字节序和主机字节序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E6%9C%BA%E5%AD%97%E8%8A%82%E5%BA%8F-%E5%B8%B8%E8%AF%B4%E7%9A%84%E5%A4%A7%E7%AB%AF%E5%92%8C%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F-%EF%BC%9A"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">主机字节序(常说的大端和小端模式)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F%E5%92%8C%E5%B0%8F%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">大端字节序和小端字节序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%AD%97%E8%8A%82%E5%BA%8F%EF%BC%9A"><span class="nav-number">5.2.2.3.</span> <span class="nav-text">网络字节序：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#accept-%E5%87%BD%E6%95%B0"><span class="nav-number">5.3.</span> <span class="nav-text">accept()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#accept"><span class="nav-number">5.3.1.</span> <span class="nav-text">accept()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%86%E4%B8%A4%E7%A7%8D%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">5.4.</span> <span class="nav-text">区分两种套接字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%91%E5%90%AC%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">5.4.1.</span> <span class="nav-text">监听套接字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%89%E8%BF%9E%E6%8E%A5%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">5.4.2.</span> <span class="nav-text">2）连接套接字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#read-%E3%80%81write-%E7%AD%89%E5%87%BD%E6%95%B0"><span class="nav-number">5.5.</span> <span class="nav-text">read()、write()等函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#read-%E5%87%BD%E6%95%B0"><span class="nav-number">5.5.1.</span> <span class="nav-text">read()函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#close-%E5%87%BD%E6%95%B0"><span class="nav-number">5.6.</span> <span class="nav-text">close()函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">Socket中TCP的建立（三次握手）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">6.1.</span> <span class="nav-text">TCP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">6.2.</span> <span class="nav-text">三次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-2"><span class="nav-number">6.2.1.</span> <span class="nav-text">三次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88SYN%EF%BC%89"><span class="nav-number">6.2.1.1.</span> <span class="nav-text">第一次握手（SYN）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88SYN-ACK%EF%BC%89"><span class="nav-number">6.2.1.2.</span> <span class="nav-text">第二次握手（SYN-ACK）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88ACK%EF%BC%89"><span class="nav-number">6.2.1.3.</span> <span class="nav-text">第三次握手（ACK）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SYN%E6%A0%87%E5%BF%97%E4%BD%8D"><span class="nav-number">6.2.2.</span> <span class="nav-text">SYN标志位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E6%98%AF%E4%B8%A4%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">6.2.3.</span> <span class="nav-text">不可是两次握手</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">TCP连接的终止(四次挥手四次握手释放)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">7.1.</span> <span class="nav-text">TCP四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%88-FIN-Seq-x%EF%BC%89"><span class="nav-number">7.1.1.</span> <span class="nav-text">第一次挥手（[FIN], Seq &#x3D; x）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8C%A5%E6%89%8B-ACK-ACK-x-1"><span class="nav-number">7.1.2.</span> <span class="nav-text">第二次挥手 ([ACK], ACK &#x3D; x + 1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B-FIN-Seq-y"><span class="nav-number">7.1.3.</span> <span class="nav-text">第三次挥手 ([FIN], Seq &#x3D; y)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B-ACK-ACK-y-1"><span class="nav-number">7.1.4.</span> <span class="nav-text">第四次挥手 ([ACK], ACK &#x3D; y + 1)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E8%83%BD%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">7.2.</span> <span class="nav-text">不能三次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E5%AD%97%E6%AE%B5"><span class="nav-number">7.3.</span> <span class="nav-text">重要字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">7.4.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS%EF%BC%9A"><span class="nav-number">7.5.</span> <span class="nav-text">PS：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81IPv4%E5%9C%B0%E5%9D%80"><span class="nav-number">7.5.1.</span> <span class="nav-text">1、IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81IPv6%E5%9C%B0%E5%9D%80"><span class="nav-number">7.5.2.</span> <span class="nav-text">2、IPv6地址</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,7 +210,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-07-09 00:24:48 / 修改时间：14:43:23" itemprop="dateCreated datePublished" datetime="2024-07-09T00:24:48+08:00">2024-07-09</time>
+      <time title="创建时间：2024-07-09 00:24:48 / 修改时间：18:18:06" itemprop="dateCreated datePublished" datetime="2024-07-09T00:24:48+08:00">2024-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,7 +247,7 @@
 <em>一次交互结束</em></p>
 </li>
 </ul>
-<h2 id="1、网络中进程间如何通信">1、网络中进程间如何通信</h2>
+<h1>网络中进程间如何通信</h1>
 <p>ps：本地的进程间通信（IPC）方式：</p>
 <ul>
 <li>消息传递（管道、FIFO、消息队列）</li>
@@ -255,17 +255,17 @@
 <li>共享内存（匿名的和具名的）</li>
 <li>远程过程调用（Solaris门和Sun RPC）</li>
 </ul>
-<h3 id="1-如何唯一标识一个进程">1)如何唯一标识一个进程</h3>
+<h2 id="如何唯一标识一个进程">如何唯一标识一个进程</h2>
 <p><strong>网络层的“ip地址”</strong>   可以<strong>唯一</strong>标识网络中的<strong>主机</strong>，而<strong>传输层的“协议+端口”</strong> 可以唯一标识主机中的<strong>应用程序（进程</strong>）</p>
 <p>利用三元组（<strong>ip地址，协议，端口</strong>）标识网络的进程–&gt;网络中的进程通信就可以利用这个标志与其它进程进行交互。</p>
 <p>使用TCP/IP协议的应用程序通常采用应用编程接口：UNIX BSD的套接字（socket）来实现网络进程之间的通信</p>
-<h2 id="2、什么是Socket？">2、什么是Socket？</h2>
+<h1>什么是Socket？</h1>
 <p>socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭）</p>
 <p><font size=2>Socket是应用层与TCP/IP协议族通信的中间软件抽象层，<strong>它是一组接口</strong>。</font>
 <font size=2>socket (门面模式) 将TCP/IP协议族隐藏在接口后面–&gt;去组织数据，以符合指定的协议</font></p>
 <hr>
-<h2 id="3、socket的基本操作">3、socket的基本操作</h2>
-<h3 id="3-1-socket-函数">3.1 .socket()函数</h3>
+<h1>socket的基本操作</h1>
+<h2 id="socket-函数">socket()函数</h2>
 <p><code>int socket(int domain, int type, int protocol);</code></p>
 <ul>
 <li>
@@ -285,8 +285,8 @@
 <p><em>ps:
 1)并不是上面的type和protocol可以随意组合，如SOCK_STREAM不可以跟IPPROTO_UDP组合。当protocol为0时，会自动选择type类型对应的默认协议</em></p>
 <p><em>2)调用socket创建一个socket时，返回的socket描述字存在于协议族空间中，但无具体地址。要赋给其一个地址，需要调用 bind() 函数，否则就当调用connect()、listen()时，系统自动随机分配一个端口</em></p>
-<h3 id="3-2-bind-函数">3.2.bind()函数</h3>
-<h4 id="3-2-1-bind-函数">3.2.1 bind()函数</h4>
+<h2 id="bind-函数">bind()函数</h2>
+<h3 id="bind-函数-2">bind()函数</h3>
 <p>(将一个地址族中的特定地址赋给socket)
 <font size=2 color='green'>e.g.对应AF_INET、AF_INET6就是把一个ipv4或ipv6地址和端口号组合赋给socket。</font>
 <code>int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</code></p>
@@ -304,18 +304,18 @@
 <p>服务器在启动的时候会绑定一个地址(ip地址＋端口号), 用于提供服务，而客户则可以通过该地址连接服务器；</p>
 <p>客户端不用指定，由系统<strong>自动分配</strong>一个端口号和自身的ip地址组合。
 –&gt;服务器端在调用 listen() 之前会调用bind()<font size=2 color='green'>赋给其一个地址</font>, 但客户端则不用, 而是在connect()时有系统随机生成一个</p>
-<h4 id="3-2-2-网络字节序和主机字节序">3.2.2.网络字节序<strong>和</strong>主机字节序</h4>
+<h3 id="网络字节序和主机字节序">网络字节序<strong>和</strong>主机字节序</h3>
 <p>是计算机网络中常用的两种<strong>数据存储格式</strong>。</p>
 <p>字节序，顾名思义字节的顺序，就是大于一个字节类型的数据在内存中的存放顺序，一个字节的数据没有顺序的问题了。</p>
-<h5 id="1）主机字节序-常说的大端和小端模式-：">1）<strong>主机字节序</strong>(常说的大端和小端模式)：</h5>
+<h4 id="主机字节序-常说的大端和小端模式-："><strong>主机字节序</strong>(常说的大端和小端模式)：</h4>
 <ul>
 <li>指的是<u>在计算机内部存储数据</u>时采用的字节排序方式。
 不同的CPU有不同的字节序类型，这些字节序是指整数在内存中保存的顺序，这个叫做主机序。</li>
 </ul>
-<h5 id="2）大端字节序和小端字节序">2）大端字节序和小端字节序</h5>
+<h4 id="大端字节序和小端字节序">大端字节序和小端字节序</h4>
 <p>a) Little-Endian: 低位字节排放在内存的低地址端，高位字节排放在内存的高地址端。<br>
 b) Big-Endian: 就是高位字节排放在内存的低地址端，低位字节排放在内存的高地址端。</p>
-<h5 id="3）网络字节序：">3）<strong>网络字节序</strong>：</h5>
+<h4 id="网络字节序："><strong>网络字节序</strong>：</h4>
 <p>指的是一种标准的字节序，规定了<u>数据在网络数据传输</u>中采用的字节序，</p>
 <ul>
 <li>即<u>大端字节序</u>(4个字节的32 bit值以下面的次序传输：首先是0～7bit，其次8～15bit，然后16～23bit，最后是24~31bit。这种传输次序称作大端字节序。)，</li>
@@ -324,8 +324,8 @@ b) Big-Endian: 就是高位字节排放在内存的低地址端，低位字节�
 </ul>
 <p><font color='red'>在将一个地址绑定到socket的时候，请<u>先将主机字节序转换成为网络字节序</u>，而不要假定主机字节序跟网络字节序一样使用的是Big-Endian。</font>
 请谨记对主机字节序不要做任何假定，务必<u>将其转化为网络字节序再赋给socket</u>。</p>
-<h3 id="3-3-accept-函数">3.3.accept()函数</h3>
-<h4 id="3-3-1-accept">3.3.1.accept()</h4>
+<h2 id="accept-函数">accept()函数</h2>
+<h3 id="accept">accept()</h3>
 <p>accept默认会阻塞进程，直到有一个客户连接建立后返回，
 <strong>返回</strong>的是一个<em>新可用的套接字</em>，这个套接字<font color='green'>(已连接socket描述字)</font>是连接套接字。</p>
 <p>TCP服务端依次调用socket()、bind()、listen()–&gt;监听指定的socket地址。
@@ -347,16 +347,16 @@ TCP服务器监听到该请求–&gt;调用accept()函数接收请求–&gt;连�
 <p>accept成功返回，则服务器与客户正确建立连接，此时服务器<u>通过accept返回的套接字(依然使用与监听套接字 sockfd() 相同的端口号)来完成与客户的通信。</u></p>
 </li>
 </ul>
-<h5 id="3-4-区分两种套接字">3.4.区分两种套接字</h5>
-<h6 id="1-监听套接字">1)监听套接字</h6>
+<h2 id="区分两种套接字">区分两种套接字</h2>
+<h3 id="监听套接字">监听套接字</h3>
 <p>监听套接字正如 accept 的参数 sockfd ，<em>调用 listen() 函数</em>–&gt;<em>服务器开始调用socket()函数生成</em>的，称为监听socket描述字(监听套接字)</p>
-<h6 id="2）连接套接字">2）连接套接字</h6>
+<h3 id="2）连接套接字">2）连接套接字</h3>
 <p>一个套接字会从主动连接的套接字变身为一个监听套接字；而accept函数返回的是已连接socket描述字(一个连接套接字)，它代表着一个网络已经存在的点点连接。</p>
 <hr>
 <p>一个服务器通常仅仅只创建一个监听socket描述字，它在该服务器的生命周期内一直存在。
 内核为每个由服务器进程接受的客户连接 创建了<font color='green'>(通过accept()函数的返回值) </font>一个已连接socket描述字，当服务器完成了对某个客户的服务，相应的已连接socket描述字就被关闭。</p>
 <p>连接套接字socketfd_new 并没有占用新的端口与客户端通信，依然使用的是与监听套接字socketfd一样的端口号</p>
-<h3 id="3-5-read-、write-等函数">3.5.read()、write()等函数</h3>
+<h2 id="read-、write-等函数">read()、write()等函数</h2>
 <p>服务器与客户已建立连接，可以调用网络I/O进行读写操作，即实现了网咯中不同进程之间的通信！网络I/O操作有下面几组：</p>
 <ul>
 <li>read()/write()</li>
@@ -366,7 +366,7 @@ TCP服务器监听到该请求–&gt;调用accept()函数接收请求–&gt;连�
 <li>recvfrom()/sendto()</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line"> </span><br><span class="line">ssize_t read(int fd, void *buf, size_t count);</span><br><span class="line">ssize_t write(int fd, const void *buf, size_t count);</span><br><span class="line"> </span><br><span class="line">#include &lt;sys/types.h&gt;</span><br><span class="line">#include &lt;sys/socket.h&gt;</span><br><span class="line"> </span><br><span class="line">ssize_t send(int sockfd, const void *buf, size_t len, int flags);</span><br><span class="line">ssize_t recv(int sockfd, void *buf, size_t len, int flags);</span><br><span class="line">ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,</span><br><span class="line">const struct sockaddr *dest_addr, socklen_t addrlen);</span><br><span class="line">ssize_t recvfrom(int sockfd, void *buf, size_t len, int flags,</span><br><span class="line">struct sockaddr *src_addr, socklen_t *addrlen);</span><br><span class="line"> </span><br><span class="line">ssize_t sendmsg(int sockfd, const struct msghdr *msg, int flags);</span><br><span class="line">ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);</span><br></pre></td></tr></table></figure>
-<h4 id="3-5-1-read-函数">3.5.1.read()函数</h4>
+<h3 id="read-函数">read()函数</h3>
 <!-- $$
 	read函数是负责从fd中读取内容
 	\begin{cases}
@@ -391,14 +391,14 @@ $$ -->
 		\end{cases}
 	\end{cases}
 $$ -->
-<h3 id="3-6-close-函数">3.6.close()函数</h3>
+<h2 id="close-函数">close()函数</h2>
 <p>在服务器与客户端建立连接之后，会进行一些读写操作，完成了读写操作就要关闭相应的socket描述字</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line">int close(int fd);</span><br></pre></td></tr></table></figure>
 <p>close一个TCP socket的缺省行为时把该 socket <u>标记为已关闭</u>，然后立即返回到调用进程。该描述字<strong>不能</strong>再由调用进程使用，也就是说<u>不能再作为read或write的第一个参数</u>。</p>
 <p>注意：close操作只是使相应socket描述字的引用计数-1，只有当引用计数为0的时候，才会触发TCP客户端向服务器发送终止连接请求</p>
-<h2 id="4-Socket中TCP的建立（三次握手）">4.Socket中TCP的建立（三次握手）</h2>
+<h1>Socket中TCP的建立（三次握手）</h1>
 <p>TCP协议通过三个报文段完成连接的建立</p>
-<h3 id="4-1-TCP">4.1.TCP</h3>
+<h2 id="TCP">TCP</h2>
 <p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ningdaxing1994/article/details/73076795">五分钟读懂TCP 协议——TCP协议简介-CSDN博客</a>
 TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<strong>可靠性</strong>，防止丢包</p>
 <ul>
@@ -415,7 +415,7 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 </ul>
 <p>TCP并不能保证数据一定会被对方接收到，这是不可能的。
 它不是100%可靠的协议，它所能提供的是<u>数据的可靠传递或故障的可靠通知。</u></p>
-<h3 id="4-2-三次握手">4.2.三次握手</h3>
+<h2 id="三次握手">三次握手</h2>
 <p><img src="/images/Pasted%20image%2020231106151100.png" alt="My Image">
 三次握手，是指建立一个TCP连接时，需要客户端和服务端总共发送3个包
 <img src="/images/Pasted%20image%2020231106172759.png" alt="My Image">
@@ -423,21 +423,21 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 服务器监听到连接请求，即收到SYN J包，调用accept函数接收请求向客户端发送SYN K ，ACK J+1，这时accept进入阻塞状态；
 客户端收到服务器的SYN K ，ACK J+1之后，这时connect返回，并对SYN K进行确认；
 服务器收到ACK K+1时，accept返回(一个已连接的socket描述字)，至此三次握手完毕，连接建立。</p>
-<h4 id="4-2-1-三次握手">4.2.1.三次握手</h4>
-<h5 id="1-第一次握手（SYN）">1) 第一次握手（SYN）</h5>
+<h3 id="三次握手-2">三次握手</h3>
+<h4 id="第一次握手（SYN）">第一次握手（SYN）</h4>
 <ul>
 <li>客户端发送一个SYN<font size=2>(SYN：同步序列编号(Synchronize Sequence Numbers))</font>标志位的数据包 --&gt; 用于请求建立连接</li>
 <li>客户端选择一个Seq<font size=2>(初始序列号)</font>=x 放入数据包中</li>
 <li>发送完毕后，<strong>客户端</strong>进入<strong>SYN_SEND</strong>状态</li>
 </ul>
-<h5 id="2-第二次握手（SYN-ACK）">2)第二次握手（SYN-ACK）</h5>
+<h4 id="第二次握手（SYN-ACK）">第二次握手（SYN-ACK）</h4>
 <ul>
 <li>服务器收到SYN数据包–&gt;发送一个带有 SYN 和 ACK<font size=2>(ACK：确认序列编号）</font>标志位的数据包(即[SYN, ACK])作为回应。</li>
 <li>服务器选择一个Seq<font size=2>(初始序列号)</font>=y 放入ACK数据包中</li>
 <li>服务器将客户端的SYN序列号+1(即x+1)，放入ACK数据包中–&gt;表示服务器已经收到客户端的请求，并准备好建立连接</li>
 <li><strong>服务器</strong>进入<strong>SYN_RECV</strong>状态</li>
 </ul>
-<h5 id="3-第三次握手（ACK）">3)第三次握手（ACK）</h5>
+<h4 id="第三次握手（ACK）">第三次握手（ACK）</h4>
 <ul>
 <li>客户端接收服务器的SYN-ACK数据包–&gt;向服务器发送一个带有ACK标志位的数据包作为确认</li>
 <li>将服务器端的ACK序列号+1(即y+1)，放入ACK数据包中–&gt;表示客户端确认服务器的回应–&gt;同意建立连接</li>
@@ -447,7 +447,7 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 </ul>
 <p>通过三次握手，客户端和服务器彼此确认了对方的能力和准备就绪状态，建立了双向的通信连接。
 每一次握手都需要对方的确认，确保连接的可靠性。</p>
-<h4 id="4-2-2-SYN标志位">4.2.2.SYN标志位</h4>
+<h3 id="SYN标志位">SYN标志位</h3>
 <ul>
 <li>是TCP协议中的一个标志位,用于<strong>建立连接时进行通信的同步</strong>.</li>
 <li>用于指示<code>发送方</code>希望<code>建立一个新的连接</code>或<code>确认一个连接请求</code></li>
@@ -462,7 +462,7 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 <p><strong>SYN标志位的使用:</strong>
 使TCP协议能够确保双方能够<strong>同步建立连接</strong>，并<strong>通过序列号的交换确保通信的可靠性</strong>。
 是TCP三次握手过程中的关键步骤之一，用于<strong>确保连接的双向同步和建立连接的可靠性。</strong></p>
-<h4 id="4-2-3-不可是两次握手">4.2.3.不可是两次握手</h4>
+<h3 id="不可是两次握手">不可是两次握手</h3>
 <p>在标准的TCP协议中，建立连接需要进行三次握手，而不是两次握手。
 三次握手过程提供了更强的连接可靠性和防止旧连接请求的保护。</p>
 <p>只进行两次握手，可能会导致以下情况的发生：</p>
@@ -475,7 +475,7 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 这可能导致服务器与一个<code>已经关闭或过期的连接建立连接</code>，引发数据传输错误或安全问题。</p>
 <p>第三次握手<u>允许服务器确认客户端的连接请求</u>，并<u>确保客户端已经收到了服务器的确认</u>。
 这样可以避免旧连接请求的问题，并提供更可靠的连接建立机制。</p>
-<h3 id="5-TCP连接的终止-四次挥手-font-size-2-四次握手释放-font">5.TCP连接的终止(四次挥手<font size=2>四次握手释放</font>)</h3>
+<h1>TCP连接的终止(四次挥手<font size=2>四次握手释放</font>)</h1>
 <p>终止一个连接要经过四次握手(发送四个包)，这是由TCP的半关闭(half-close)造成的
 <img src="/images/Pasted%20image%2020231107145105.png" alt="My Image"></p>
 <ul>
@@ -484,25 +484,25 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 <li>收到一个 FIN只意味着这一方向上没有数据流动，一个TCP连接在收到一个FIN后仍能发送数据。</li>
 <li>首先进行关闭的一方将执行主动关闭，而另一方执行被动关闭。</li>
 </ul>
-<h4 id="5-1-TCP四次挥手">5.1.TCP四次挥手</h4>
+<h2 id="TCP四次挥手">TCP四次挥手</h2>
 <p><img src="/images/Pasted%20image%2020231107150503.png" alt="My Image"></p>
-<h5 id="1）第一次挥手（-FIN-Seq-x）">1）第一次挥手（[FIN], Seq = x）</h5>
+<h3 id="第一次挥手（-FIN-Seq-x）">第一次挥手（[FIN], Seq = x）</h3>
 <ul>
 <li>客户端发送一个FIN标记的包，告诉服务器需要关闭连接，表示自己不用发送数据，但还可以接收数据。</li>
 <li>发送完成后，<code>客户端</code>进入<code>FIN_WAIT_1</code>状态。</li>
 </ul>
-<h5 id="2）第二次挥手-ACK-ACK-x-1">2）第二次挥手 <strong>([ACK], ACK = x + 1)</strong></h5>
+<h3 id="第二次挥手-ACK-ACK-x-1">第二次挥手 <strong>([ACK], ACK = x + 1)</strong></h3>
 <ul>
 <li>服务端收到FIN，发送一个ACK的确认包(确认序号为收到的序号+1)，告诉客户端接收到关闭请求，但是还未准备好。</li>
 <li>发送完成后，<code>服务端</code>进入<code>CLOSE_WAIT</code>状态，</li>
 <li><code>客户端</code>收到这个包后，进入<code>FIN_WAIT_2</code>，等待服务器关闭连接。</li>
 </ul>
-<h5 id="3）第三次挥手-FIN-Seq-y">3）第三次挥手 ([FIN], Seq = y)</h5>
+<h3 id="第三次挥手-FIN-Seq-y">第三次挥手 ([FIN], Seq = y)</h3>
 <ul>
 <li>服务端准备好关闭连接后，发送FIN标记的包，告诉客户端准备关闭。</li>
 <li>发送完成后，<code>服务端</code>进入<code>LAST_ACK</code>状态，等待客户端确认。</li>
 </ul>
-<h5 id="4）第四次挥手-ACK-ACK-y-1">4）第四次挥手 ([ACK], ACK = y + 1)</h5>
+<h3 id="第四次挥手-ACK-ACK-y-1">第四次挥手 ([ACK], ACK = y + 1)</h3>
 <ul>
 <li>
 <p>客户端接收到服务端的关闭请求，再发送ACK标记的确认包，进入<code>TIME_WAIT</code>状态，等待服务端可能请求重传的ACK包。
@@ -517,11 +517,11 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 <p>客户端在*等待固定时间(两个最大段生命周期)*后，没有接收到服务的ACK包，认为服务器已关闭连接，自己也关闭连接，进入<code>CLOSED</code>状态。</p>
 </li>
 </ul>
-<h4 id="5-2不能三次挥手">5.2不能三次挥手</h4>
+<h2 id="不能三次挥手">不能三次挥手</h2>
 <p>从假设的角度分析，如果是三次挥手，在服务器接收到客户端发送关闭的请求后，把SYN和ACK包一起发过去。</p>
 <p>这样<u>会造成服务端还有数据没有发送完，造成了数据的丢失。</u>
 所以中间的这一段时间，等待服务器把剩余的数据发送完是很有必要的。</p>
-<h4 id="5-3-重要字段">5.3.重要字段</h4>
+<h2 id="重要字段">重要字段</h2>
 <p><strong>序号(sequence number)</strong>：seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。</p>
 <p><strong>确认号（acknowledgement number）</strong>：ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，ack=seq+1。</p>
 <p><strong>标志位（Flags）</strong>：共6个，即URG、ACK、PSH、RST、SYN、FIN等。具体含义如下：</p>
@@ -539,7 +539,7 @@ TCP 协议的作用是，保证数据通信的<strong>完整性</strong>和<stro
 <p><strong>ACK</strong>：用于确定<strong>收到了请求</strong>。</p>
 <p><strong>seq</strong>：发送<strong>自己的</strong>数据。</p>
 <p><strong>ack</strong>：发送<strong>接收到的对方的</strong>数据。</p>
-<h2 id="6、实例">6、实例</h2>
+<h2 id="实例">实例</h2>
 <h2 id="PS：">PS：</h2>
 <h3 id="1、IPv4地址">1、IPv4地址</h3>
 <ul>
